@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Single image · linked</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f8faff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      padding: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 2rem;
+      box-shadow: 0 20px 40px -12px rgba(0, 20, 40, 0.25);
+      padding: 1.5rem 1.5rem 1.8rem;
+      max-width: 700px;
+      width: 100%;
+      transition: box-shadow 0.25s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      box-shadow: 0 28px 48px -16px rgba(0, 30, 60, 0.3);
+    }
+
+    
+    .image-link {
+      display: block;
+      border-radius: 1.4rem;
+      overflow: hidden;
+      line-height: 0;          /* remove extra space under image */
+      background: #eef2f7;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .image-link:hover {
+      transform: scale(1.008);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .image-link:active {
+      transform: scale(0.98);
+    }
+
+    
+    .image-link img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;   
+      object-fit: cover;      
+      transition: filter 0.2s;
+    }
+
+    .image-link:hover img {
+      filter: brightness(1.02) contrast(1.02);
+    }
+
+    
+    .caption {
+      margin-top: 1.2rem;
+      font-size: 0.95rem;
+      color: #2c3e50;
+      letter-spacing: 0.3px;
+      opacity: 0.75;
+      border-top: 1px solid #e9edf4;
+      padding-top: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .caption span {
+      background: #eef2f7;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #1e2a3a;
+      letter-spacing: 0.2px;
+    }
+
+    .caption a {
+      color: #1e4a7a;
+      text-decoration: none;
+      border-bottom: 1px dotted #9bb7d4;
+      font-weight: 500;
+    }
+
+    .caption a:hover {
+      color: #0b2b4a;
+      border-bottom-color: #1e4a7a;
+    }
+
+    
+    @media (max-width: 480px) {
+      .card {
+        padding: 1rem;
+      }
+      .caption {
+        font-size: 0.85rem;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card" role="main" aria-label="Image card with link">
+
+  <!--
+    ***********************************************************
+    *  CLICK THE IMAGE → it opens the link you set in 'href'  *
+    *  Replace the href value with your own URL.              *
+    *  The image source is set to a beautiful placeholder     *
+    *  (high-res landscape) – you can change 'src' to your    *
+    *  own image file or URL.                                 *
+    ***********************************************************
+  -->
+  <a class="image-link" 
+     href="https://discord.com/invite/FkeWFbWJ72" 
+     target="_blank" 
+     rel="noopener noreferrer"
+     aria-label="discord link">
+    <img 
+      src="https://images.steamusercontent.com/ugc/1747928817932721024/600BDE6DE59CF7F8C0A59B4D63D98F099FD59559/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" 
+      alt="Join Discord click Image"
+      loading="lazy"
+      width="800"
+      height="450"
+    >
+  </a>
+
+  
+  <div class="caption">
+    <span>🔗</span>
+    <span>click the image →</span>
+    <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank" rel="noopener noreferrer">
+      wikipedia.org/wiki/Special:Random
+    </a>
+    <span style="opacity:0.5; font-size:0.75rem;">(opens new tab)</span>
+  </div>
+
+  <!-- 
+    * You can replace the image with your own by changing the 'src' attribute.
+    * Example: src="your-image.jpg" or a full URL.
+    * The link target is set to open in a new tab (target="_blank") 
+    * but you can remove target="_blank" if you prefer the same tab.
+  -->
+
+</div>
+
+</body>
+</html>
